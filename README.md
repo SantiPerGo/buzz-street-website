@@ -15,4 +15,9 @@ Backend Technologies:
     <li>Java 20</li>
     <li>Spring Boot</li>
     <li>H2 Database</li>
+    <li>JDBC</li>
+    <li>JPA</li>
+    <li>Lombok</li>
+    <li>Hibernate</li>
+    <li>Swagger Documentation</li>
 </ol>
