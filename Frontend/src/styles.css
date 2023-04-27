@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* Bootstrap icons */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
