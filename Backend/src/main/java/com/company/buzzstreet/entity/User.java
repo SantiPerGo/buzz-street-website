@@ -22,11 +22,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Schema(required = true)
     @NotNull
     private String name;
 
-    @Schema(required = true)
     @NotNull
     private String email;
+
+    private String imgUrl;
 }

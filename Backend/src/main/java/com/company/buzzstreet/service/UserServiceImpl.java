@@ -33,6 +33,9 @@ public class UserServiceImpl implements UserService {
                     .email(user.getEmail())
                     .build();
 
+            if(user.getImgUrl() != null)
+                newUser.setImgUrl(user.getImgUrl());
+
             return new ResponseEntity<>(userRepository.saveAndFlush(newUser), HttpStatus.OK);
         }
     }

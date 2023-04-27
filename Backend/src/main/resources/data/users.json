@@ -2,26 +2,31 @@
   {
     "id": 1,
     "name": "Enrique Spencer",
-    "email": "enrique.spencer@example.com"
+    "email": "enrique.spencer@example.com",
+    "imgUrl": "https://randomuser.me/api/portraits/men/72.jpg"
   },
   {
     "id": 2,
     "name": "Eileen Nelson",
-    "email": "eileen.nelson@example.com"
+    "email": "eileen.nelson@example.com",
+    "imgUrl": "https://randomuser.me/api/portraits/women/39.jpg"
   },
   {
     "id": 3,
     "name": "John Torres",
-    "email": "john.torres@example.com"
+    "email": "john.torres@example.com",
+    "imgUrl": "https://randomuser.me/api/portraits/men/82.jpg"
   },
   {
     "id": 4,
     "name": "Cathy Wells",
-    "email": "cathy.wells@example.com"
+    "email": "cathy.wells@example.com",
+    "imgUrl": "https://randomuser.me/api/portraits/women/68.jpg"
   },
   {
     "id": 5,
     "name": "Kyle Fisher",
-    "email": "kyle.fisher@example.com"
+    "email": "kyle.fisher@example.com",
+    "imgUrl": "https://randomuser.me/api/portraits/men/75.jpg"
   }
 ]
