@@ -34,7 +34,7 @@ export class UsersComponent implements OnInit, OnDestroy {
     performFilter(filterBy: string): IUser[] {
       filterBy = filterBy.toLocaleLowerCase();
       return this.users.filter((user: IUser) =>
-      user.userName.toLocaleLowerCase().includes(filterBy));
+      user.name.toLocaleLowerCase().includes(filterBy));
     }
 
     toggleImage(): void { this.showImage = !this.showImage; }
