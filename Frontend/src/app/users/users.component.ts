@@ -13,14 +13,23 @@ export class UsersComponent implements OnInit, OnDestroy {
   errorMessage: string = '';
   sub!: Subscription;
 
-  private _listFilter: string = '';
-    get listFilter(): string{
-      return this._listFilter;
+  private _listFilterName: string = '';
+  private _listFilterEmail: string = '';
+    get listFilterName(): string{
+      return this._listFilterName;
     }
-    set listFilter(value: string){
-      this._listFilter = value;
+    set listFilterName(value: string){
+      this._listFilterName = value;
       console.log('In setter:', value);
-      this.filteredUsers = this.performFilter(value);
+      this.filteredUsers = this.performFilter(value, 1);
+    }
+    get listFilterEmail(): string{
+      return this._listFilterEmail;
+    }
+    set listFilterEmail(value: string){
+      this._listFilterEmail = value;
+      console.log('In setter:', value);
+      this.filteredUsers = this.performFilter(value, 2);
     }
 
     filteredUsers: IUser[] = [];
@@ -28,10 +37,13 @@ export class UsersComponent implements OnInit, OnDestroy {
 
     constructor(private userService: UserService) {}
 
-    performFilter(filterBy: string): IUser[] {
+    performFilter(filterBy: string, numberOfOption: number): IUser[] {
       filterBy = filterBy.toLocaleLowerCase();
-      return this.users.filter((user: IUser) =>
-      user.name.toLocaleLowerCase().includes(filterBy));
+
+      if(numberOfOption === 1)
+        return this.users.filter((user: IUser) => user.name.toLocaleLowerCase().includes(filterBy));
+      else 
+        return this.users.filter((user: IUser) => user.email.toLocaleLowerCase().includes(filterBy));
     }
 
     ngOnInit(): void {

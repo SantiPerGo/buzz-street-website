@@ -1,4 +1,4 @@
-<div class="card border border-dark w-100" *ngIf="filteredUsers.length">
+<div class="card border border-dark w-100" *ngIf="users.length">
     <div class="card-header text-light text-center">
         <h2>{{pageTitle}}</h2>
     </div>
@@ -6,14 +6,23 @@
     <div class="card-body">
         <div class="row text-center justify-content-center my-3">
             <div class="col-md-4">
-                <h4>Filter by user name:</h4>
+                <h4>Filter by username:</h4>
             </div>
             <div class="col-md-6">
-                <input type="text"class="form-control" [(ngModel)]="listFilter" />
+                <input type="text" class="form-control" id="name-input" (click)="email.value=''; listFilterEmail=''" #name [(ngModel)]="listFilterName" />
             </div>
         </div>
 
-        <div class="row text-center justify-content-center">
+        <div class="row text-center justify-content-center my-3">
+            <div class="col-md-4">
+                <h4>Filter by email:</h4>
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="email-input" (click)="name.value=''; listFilterName=''" #email [(ngModel)]="listFilterEmail" />
+            </div>
+        </div>
+
+        <div class="row text-center justify-content-center" *ngIf="filteredUsers.length">
             <div class="card row m-3 px-0 card-anim" *ngFor="let user of filteredUsers">
                 <img class="card-img-top px-0"
                     [src]="user.imgUrl"
@@ -24,16 +33,20 @@
                 </div>
             </div>
         </div>
+
+        <div class="row text-center justify-content-center my-5" *ngIf="!filteredUsers.length">
+            <div class="col">
+                <h4>There is no users with that name!</h4>
+            </div>
+        </div>
     </div>
 
     <div class="card-footer text-light text-center">
-        <div *ngIf="!listFilter"><h4>Type Some Text to Filter the Users!</h4></div>
-        <div *ngIf="listFilter&&filteredUsers.length"><h4>Filtered by:&nbsp;{{listFilter}}</h4></div>
-        <div *ngIf="listFilter&&!filteredUsers.length"><h4>There is no users</h4></div>
+        <h4>Type Some Text to Filter the Users!</h4>
     </div>
 </div>
 
-<div class="row justify-content-center my-5" *ngIf="!filteredUsers.length">
+<div class="row justify-content-center my-5" *ngIf="!users.length">
     <div class="col-6 col-md-5 text-center">
         <img src="../../assets/img/map.png" class="img-fluid" alt="Buzz Street Title in Map">
     </div>
