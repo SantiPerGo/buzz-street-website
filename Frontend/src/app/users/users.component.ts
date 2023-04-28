@@ -9,10 +9,7 @@ import { UserService } from "./users.service";
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit, OnDestroy {
-  pageTitle: string = 'User List';
-  imageWidth: number = 50;
-  imageMargin: number = 2;
-  showImage: boolean = false;
+  pageTitle: string = 'Buzz Street Employees';
   errorMessage: string = '';
   sub!: Subscription;
 
@@ -36,8 +33,6 @@ export class UsersComponent implements OnInit, OnDestroy {
       return this.users.filter((user: IUser) =>
       user.name.toLocaleLowerCase().includes(filterBy));
     }
-
-    toggleImage(): void { this.showImage = !this.showImage; }
 
     ngOnInit(): void {
       this.sub = this.userService.getUsers().subscribe({
