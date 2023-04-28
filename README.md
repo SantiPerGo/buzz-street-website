@@ -2,11 +2,9 @@
 
 <p><b>Repo for Buzz Street Frontend and Backend Development</b></p>
 
-<p>Video explanation:</p>
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
-</div>
+<p><a target="_blank" href="https://youtu.be/10xXW_gDoHQ">
+    Click here to see the video explanation
+</a></p>
 
 # Technologies
 
@@ -14,14 +12,13 @@ Frontend Technologies:
 <ol>
     <li>HTML</li>
     <li>CSS</li>
-    <li>JavaScript</li>
     <li>TypeScript</li>
     <li>Angular</li>
 </ol>
 
 Backend Technologies:
 <ol>
-    <li>Java 20</li>
+    <li>Java (Version 20)</li>
     <li>Spring Boot</li>
     <li>H2 Database</li>
     <li>JDBC</li>
