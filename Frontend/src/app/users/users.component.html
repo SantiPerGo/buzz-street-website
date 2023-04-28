@@ -1,4 +1,4 @@
-<div class="card border border-dark w-100">
+<div class="card border border-dark w-100" *ngIf="filteredUsers.length">
     <div class="card-header text-light text-center">
         <h2>{{pageTitle}}</h2>
     </div>
@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <div class="row text-center justify-content-center" *ngIf="filteredUsers.length">
+        <div class="row text-center justify-content-center">
             <div class="card row m-3 px-0 card-anim" *ngFor="let user of filteredUsers">
                 <img class="card-img-top px-0"
                     [src]="user.imgUrl"
@@ -30,5 +30,16 @@
         <div *ngIf="!listFilter"><h4>Type Some Text to Filter the Users!</h4></div>
         <div *ngIf="listFilter&&filteredUsers.length"><h4>Filtered by:&nbsp;{{listFilter}}</h4></div>
         <div *ngIf="listFilter&&!filteredUsers.length"><h4>There is no users</h4></div>
+    </div>
+</div>
+
+<div class="row justify-content-center my-5" *ngIf="!filteredUsers.length">
+    <div class="col-6 col-md-5 text-center">
+        <img src="../../assets/img/map.png" class="img-fluid" alt="Buzz Street Title in Map">
+    </div>
+    <div class="col-6 col-md-5">
+        <h2 class="h-100 d-flex justify-content-center align-items-center display-3 fw-semibold">
+            The only marketplace in Mexico and Latam to transact commercial properties
+        </h2>
     </div>
 </div>
