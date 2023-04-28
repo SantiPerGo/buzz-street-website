@@ -23,7 +23,7 @@ public class UserController {
             description = "Return a list of Buzz Street users")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "ok, succesful operation",
-                    content = @Content(schema = @Schema(implementation = User.class))),
+                    content = @Content(schema = @Schema())),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content(schema = @Schema()))
     })
@@ -34,11 +34,11 @@ public class UserController {
             description = "Create a Buzz Street user")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "ok, succesful operation",
-                    content = @Content(schema = @Schema(implementation = User.class))),
+                    content = @Content(schema = @Schema())),
             @ApiResponse(responseCode = "400", description = "Bad request, user exists in the database",
                     content = @Content(schema = @Schema()))
     })
-    @PostMapping
+    @PostMapping(produces = "application/json")
     public ResponseEntity<User> createUser(@RequestBody final User user){
         return userService.createUser(user);
     }
@@ -47,11 +47,11 @@ public class UserController {
             description = "Delete a Buzz Street user by searching with the id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "ok, succesful operation",
-                    content = @Content(schema = @Schema(implementation = User.class))),
+                    content = @Content(schema = @Schema())),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content(schema = @Schema()))
     })
-    @DeleteMapping(value = "{id}")
+    @DeleteMapping(value = "{id}", produces = "application/json")
     public ResponseEntity<String> deleteUser(@PathVariable Long id){
         return userService.deleteUser(id);
     }
@@ -60,22 +60,22 @@ public class UserController {
             description = "Return an specifit Buzz Street user by searching with the name and email")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "ok, succesful operation",
-                    content = @Content(schema = @Schema(implementation = User.class))),
+                    content = @Content(schema = @Schema())),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content(schema = @Schema()))
     })
-    @PostMapping("/getUser")
+    @PostMapping(value ="/getUser", produces = "application/json")
     public ResponseEntity<User> getUser(@RequestBody final User user){ return userService.getUser(user); }
 
     @Operation(summary = "Update user",
             description = "Update name and email of a Buzz Street user")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "ok, succesful operation",
-                    content = @Content(schema = @Schema(implementation = User.class))),
+                    content = @Content(schema = @Schema())),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content(schema = @Schema()))
     })
-    @PutMapping(value = "{id}")
+    @PutMapping(value = "{id}", produces = "application/json")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user){
         return userService.updateUser(id, user);
     }
